@@ -1,0 +1,166 @@
+/* ==== Design tokens ======================================================= */
+:root {
+  --bg: #f7f8fc;
+  --fg: #0f1724;
+  --muted: #6c7280;
+
+  --card-bg: rgba(255,255,255,0.75);
+  --card-border: rgba(15,23,36,0.08);
+  --shadow: 0 8px 36px rgba(15,23,36,0.12);
+
+  --accent1: #ff74d4;  /* pink */
+  --accent2: #8a7dff;  /* violet */
+  --accent3: #53a0ff;  /* blue */
+
+  --link: #3b7dff;
+  --badge-bg: rgba(83,160,255,0.12);
+
+  --radius-lg: 16px;
+  --radius-sm: 10px;
+
+  --container-w: 880px;
+}
+
+[data-theme="dark"] {
+  --bg: #0c0e15;
+  --fg: #e6e9f3;
+  --muted: #9aa3b2;
+
+  --card-bg: rgba(17,19,28,0.6);
+  --card-border: rgba(255,255,255,0.06);
+  --shadow: 0 10px 40px rgba(0,0,0,0.45);
+
+  --link: #8fb3ff;
+  --badge-bg: rgba(138,125,255,0.18);
+}
+
+/* auto-theme from system */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg: #0c0e15;
+    --fg: #e6e9f3;
+    --muted: #9aa3b2;
+
+    --card-bg: rgba(17,19,28,0.6);
+    --card-border: rgba(255,255,255,0.06);
+    --shadow: 0 10px 40px rgba(0,0,0,0.45);
+
+    --link: #8fb3ff;
+    --badge-bg: rgba(138,125,255,0.18);
+  }
+}
+
+/* ==== Base ================================================================= */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font: 16px/1.6 system-ui, -apple-system, "SF Pro Text", Segoe UI, Roboto, Helvetica, Arial;
+  color: var(--fg);
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* bg gradient aura like the app */
+.bg-aura {
+  position: fixed; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(60% 50% at 100% 0%, color-mix(in oklab, var(--accent2) 36%, transparent) 0%, transparent 70%),
+    radial-gradient(60% 50% at 0% 100%, color-mix(in oklab, var(--accent1) 34%, transparent) 0%, transparent 70%),
+    radial-gradient(40% 40% at 100% 100%, color-mix(in oklab, var(--accent3) 30%, transparent) 0%, transparent 70%);
+  filter: blur(28px) saturate(120%);
+  opacity: .65;
+}
+
+.container {
+  width: min(100%, var(--container-w));
+  padding: 24px;
+  position: relative;
+}
+
+/* ==== Header / Nav ======================================================== */
+.nav {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 16px; padding: 18px 20px; margin: 24px 0;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+}
+
+.logo {
+  display: flex; align-items: center; gap: 12px;
+  font-weight: 700; letter-spacing: 0.2px;
+}
+.logo-badge {
+  width: 36px; height: 36px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2), var(--accent3));
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35);
+}
+.logo-title {
+  font-size: 18px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links a {
+  margin-left: 14px; text-decoration: none; color: var(--fg); opacity: .85;
+}
+.nav-links a:hover { opacity: 1; }
+
+/* theme toggle */
+.theme-toggle {
+  display:flex; align-items:center; gap:8px; cursor:pointer;
+  user-select:none; font-weight:600; color: var(--fg); opacity:.85;
+}
+.theme-toggle .switch {
+  width: 46px; height: 26px; border-radius: 18px;
+  background: color-mix(in oklab, var(--accent2) 30%, #0000);
+  border: 1px solid var(--card-border);
+  position: relative;
+}
+.theme-toggle .dot {
+  position:absolute; top:2px; left:2px; width:22px; height:22px; border-radius: 50%;
+  background: #fff; transition: transform .25s ease;
+  box-shadow: 0 3px 10px rgba(0,0,0,.2);
+}
+[data-theme="dark"] .theme-toggle .dot { transform: translateX(20px); }
+
+/* ==== Card ================================================================ */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+.card + .card { margin-top: 16px; }
+
+.h1 {
+  font-size: 28px; margin: 0 0 10px 0; line-height: 1.25;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.h2 { font-size: 20px; margin: 18px 0 8px; }
+.p  { margin: 8px 0; color: var(--fg); }
+.muted { color: var(--muted); }
+
+.badge {
+  display:inline-block; padding:6px 10px; border-radius: 999px;
+  background: var(--badge-bg); border: 1px solid var(--card-border);
+  font-weight: 600; font-size: 13px;
+}
+ul { margin: 10px 0; padding-left: 18px; }
+a { color: var(--link); }
+
+/* ==== Footer ============================================================== */
+.footer {
+  text-align:center; margin: 20px 0 40px;
+  color: var(--muted);
+}

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Timetable DSW — polityka prywatności</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script defer src="/assets/theme.js"></script>
+</head>
+<body>
+  <div class="bg-aura"></div>
+
+  <div class="container">
+    <nav class="nav">
+      <div class="logo">
+        <div class="logo-badge"></div>
+        <div class="logo-title">Timetable DSW</div>
+        <span class="badge">Privacy</span>
+      </div>
+      <div class="nav-links">
+        <a href="/support/">Wsparcie</a>
+        <a href="/privacy/">Prywatność</a>
+      </div>
+      <div class="theme-toggle" onclick="toggleTheme()">
+        <div class="switch"><div class="dot"></div></div>
+        <span>Tryb</span>
+      </div>
+    </nav>
+
+    <section class="card">
+      <h1 class="h1">Polityka prywatności</h1>
+      <p class="p muted">Ostatnia aktualizacja: <span id="d"></span></p>
+
+      <h2 class="h2">1. Informacje ogólne</h2>
+      <p class="p">
+        Aplikacja <strong>Timetable DSW</strong> nie wymaga logowania ani tworzenia konta.
+        Dane o planie zajęć pochodzą z publicznych źródeł uczelni (harmonogramy DSW).
+        Aplikacja nie gromadzi danych osobowych użytkownika.
+      </p>
+
+      <h2 class="h2">2. Dane na urządzeniu</h2>
+      <p class="p">
+        Aplikacja może zapisywać niewielkie dane tymczasowe (cache) wyłącznie w celu działania
+        offline i szybszego wczytywania treści. Dane te pozostają na urządzeniu.
+      </p>
+
+      <h2 class="h2">3. Analityka i reklamy</h2>
+      <p class="p">
+        <strong>Obecna wersja:</strong> brak analityki i brak aktywnych reklam.
+        Biblioteka <strong>Google AdMob</strong> jest technicznie dodana do projektu,
+        ale wyświetlanie reklam jest <strong>wyłączone</strong>.
+      </p>
+      <p class="p">
+        <strong>Przyszłe wersje (po włączeniu reklam):</strong> aplikacja może wyświetlać reklamy Google AdMob,
+        co może wiązać się z wykorzystywaniem identyfikatorów urządzenia i danych użycia.
+        Przed uruchomieniem reklam: (a) zaktualizujemy niniejszą politykę,
+        (b) wyświetlimy monit o zgodę zgodnie z GDPR (UMP SDK), (c) zaktualizujemy
+        sekcję „App Privacy” w App Store.
+      </p>
+
+      <h2 class="h2">4. Prawa użytkownika i kontakt</h2>
+      <p class="p">
+        W razie pytań prosimy o kontakt: <a href="mailto:dev.mikita.laptsionak@gmail.com">dev.mikita.laptsionak@gmail.com</a>
+      </p>
+    </section>
+
+    <div class="footer">© <span id="y"></span> Mikita Laptsionak. Wszelkie prawa zastrzeżone.</div>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const d = new Date();
+    document.getElementById('d').textContent =
+      d.toLocaleDateString('pl-PL', { year:'numeric', month:'2-digit', day:'2-digit' });
+  </script>
+</body>
+</html>
