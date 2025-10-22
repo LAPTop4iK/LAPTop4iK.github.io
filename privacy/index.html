@@ -3,17 +3,30 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Timetable DSW — polityka prywatności</title>
+  <title>Timetable DSW — Polityka prywatności / Privacy Policy</title>
   <link rel="stylesheet" href="/assets/styles.css" />
   <script defer src="/assets/theme.js"></script>
+  <style>
+    .langbar{display:flex;gap:8px;flex-wrap:wrap}
+    .langbar button{
+      padding:8px 10px;border-radius:10px;border:1px solid var(--card-border);
+      background:var(--card-bg);cursor:pointer;font-weight:600
+    }
+    .langbar button.active{outline:2px solid color-mix(in oklab,var(--link) 50%,transparent)}
+    [data-i18n]{display:none}
+    [data-i18n].show{display:block}
+    .list{padding-left:18px;margin:8px 0}
+  </style>
 </head>
 <body>
   <div class="bg-aura"></div>
-
   <div class="container">
     <nav class="nav">
       <div class="logo">
-        <div class="logo-badge"></div>
+        <div class="logo-badge">
+          <img src="/assets/logo-light.png" alt="Timetable DSW logo" class="logo-img light" />
+          <img src="/assets/logo-dark.png" alt="Timetable DSW logo" class="logo-img dark" />
+        </div>
         <div class="logo-title">Timetable DSW</div>
         <span class="badge">Privacy</span>
       </div>
@@ -28,50 +41,177 @@
     </nav>
 
     <section class="card">
-      <h1 class="h1">Polityka prywatności</h1>
-      <p class="p muted">Ostatnia aktualizacja: <span id="d"></span></p>
+      <div class="langbar">
+        <button data-lang="pl" class="active">Polski</button>
+        <button data-lang="en">English</button>
+        <button data-lang="uk">Українська</button>
+      </div>
 
-      <h2 class="h2">1. Informacje ogólne</h2>
-      <p class="p">
-        Aplikacja <strong>Timetable DSW</strong> nie wymaga logowania ani tworzenia konta.
-        Dane o planie zajęć pochodzą z publicznych źródeł uczelni (harmonogramy DSW).
-        Aplikacja nie gromadzi danych osobowych użytkownika.
-      </p>
+      <!-- ========== POLISH ========== -->
+      <div data-i18n="pl" class="show">
+        <h1 class="h1">Polityka prywatności</h1>
+        <p class="p muted">Ostatnia aktualizacja: <span id="d-pl"></span></p>
 
-      <h2 class="h2">2. Dane na urządzeniu</h2>
-      <p class="p">
-        Aplikacja może zapisywać niewielkie dane tymczasowe (cache) wyłącznie w celu działania
-        offline i szybszego wczytywania treści. Dane te pozostają na urządzeniu.
-      </p>
+        <h2 class="h2">1. Informacje ogólne</h2>
+        <p class="p">
+          Aplikacja <strong>Timetable DSW</strong> umożliwia studentom Uniwersytetu Dolnośląskiego DSW
+          we Wrocławiu szybki dostęp do planu zajęć, przedmiotów i wykładowców.
+        </p>
 
-      <h2 class="h2">3. Analityka i reklamy</h2>
-      <p class="p">
-        <strong>Obecna wersja:</strong> brak analityki i brak aktywnych reklam.
-        Biblioteka <strong>Google AdMob</strong> jest technicznie dodana do projektu,
-        ale wyświetlanie reklam jest <strong>wyłączone</strong>.
-      </p>
-      <p class="p">
-        <strong>Przyszłe wersje (po włączeniu reklam):</strong> aplikacja może wyświetlać reklamy Google AdMob,
-        co może wiązać się z wykorzystywaniem identyfikatorów urządzenia i danych użycia.
-        Przed uruchomieniem reklam: (a) zaktualizujemy niniejszą politykę,
-        (b) wyświetlimy monit o zgodę zgodnie z GDPR (UMP SDK), (c) zaktualizujemy
-        sekcję „App Privacy” w App Store.
-      </p>
+        <h2 class="h2">2. Dane przechowywane na urządzeniu</h2>
+        <p class="p">
+          Aplikacja może zapisywać niewielkie dane (cache) na urządzeniu, aby działać offline i szybciej
+          wczytywać treści. Dane te nie są wysyłane na zewnętrzne serwery.
+        </p>
 
-      <h2 class="h2">4. Prawa użytkownika i kontakt</h2>
-      <p class="p">
-        W razie pytań prosimy o kontakt: <a href="mailto:dev.mikita.laptsionak@gmail.com">dev.mikita.laptsionak@gmail.com</a>
-      </p>
+        <h2 class="h2">3. Reklamy i śledzenie</h2>
+        <p class="p">
+          Aplikacja korzysta z <strong>Google AdMob</strong> do wyświetlania reklam:
+          <strong>banerowych</strong>, <strong>międzyekranowych</strong> (interstitial)
+          oraz <strong>nagradzających (rewarded)</strong>.
+        </p>
+
+        <p class="p">AdMob może przetwarzać następujące dane:</p>
+        <ul class="list">
+          <li>Identyfikatory urządzenia (IDFA / AAID) i identyfikator reklamy.</li>
+          <li>Dane o interakcjach z reklamą (wyświetlenia, kliknięcia, skuteczność kampanii).</li>
+          <li>Przybliżona lokalizacja (na podstawie adresu IP).</li>
+          <li>Dane diagnostyczne i wydajnościowe SDK.</li>
+        </ul>
+
+        <p class="p">
+          Dane te mogą być używane do <strong>śledzenia</strong> użytkownika w aplikacjach i witrynach
+          innych firm (zgodnie z definicją Apple). Przed wyświetleniem reklam:
+        </p>
+        <ul class="list">
+          <li>pokażemy monit <strong>App Tracking Transparency</strong> (zgoda na IDFA),</li>
+          <li>w regionie EOG wyświetlimy ekran zgody <strong>Google UMP</strong> (GDPR),</li>
+          <li>zaktualizujemy informacje o prywatności w App Store.</li>
+        </ul>
+        <p class="p">
+          Szczegóły: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Zasady reklam Google</a>.
+        </p>
+
+        <h2 class="h2">4. Kontakt</h2>
+        <p class="p">E-mail: <a href="mailto:dev.mikita.laptsionak@gmail.com">dev.mikita.laptsionak@gmail.com</a></p>
+      </div>
+
+      <!-- ========== ENGLISH ========== -->
+      <div data-i18n="en">
+        <h1 class="h1">Privacy Policy</h1>
+        <p class="p muted">Last updated: <span id="d-en"></span></p>
+
+        <h2 class="h2">1. Overview</h2>
+        <p class="p">
+          <strong>Timetable DSW</strong> provides students of Uniwersytet Dolnośląski DSW in Wrocław
+          with quick access to their schedule, subjects, and lecturers.
+        </p>
+
+        <h2 class="h2">2. Data stored on device</h2>
+        <p class="p">
+          The app may store small temporary data (cache) on your device to work offline and load content faster.
+          This data is not shared externally.
+        </p>
+
+        <h2 class="h2">3. Advertising and tracking</h2>
+        <p class="p">
+          The app uses <strong>Google AdMob</strong> to display <strong>banner</strong>,
+          <strong>interstitial</strong>, and <strong>rewarded ads</strong>.
+        </p>
+
+        <p class="p">AdMob may collect and process:</p>
+        <ul class="list">
+          <li>Device identifiers (IDFA / AAID) and advertising ID.</li>
+          <li>Ad interaction data (impressions, clicks, campaign performance).</li>
+          <li>Approximate location (derived from IP address).</li>
+          <li>Diagnostics and SDK performance data.</li>
+        </ul>
+
+        <p class="p">
+          This data may be used for <strong>tracking</strong> across apps and websites owned by other companies
+          (as defined by Apple). Before showing ads we will:
+        </p>
+        <ul class="list">
+          <li>display an <strong>App Tracking Transparency</strong> prompt (IDFA permission),</li>
+          <li>show a <strong>Google UMP</strong> consent form in EEA (GDPR),</li>
+          <li>update the App Store <strong>App Privacy</strong> section.</li>
+        </ul>
+        <p class="p">
+          Details: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google Ads Policy</a>.
+        </p>
+
+        <h2 class="h2">4. Contact</h2>
+        <p class="p">Email: <a href="mailto:dev.mikita.laptsionak@gmail.com">dev.mikita.laptsionak@gmail.com</a></p>
+      </div>
+
+      <!-- ========== UKRAINIAN ========== -->
+      <div data-i18n="uk">
+        <h1 class="h1">Політика конфіденційності</h1>
+        <p class="p muted">Останнє оновлення: <span id="d-uk"></span></p>
+
+        <h2 class="h2">1. Загальна інформація</h2>
+        <p class="p">
+          <strong>Timetable DSW</strong> надає студентам Uniwersytet Dolnośląski DSW у Вроцлаві
+          швидкий доступ до розкладу, предметів і викладачів.
+        </p>
+
+        <h2 class="h2">2. Дані на пристрої</h2>
+        <p class="p">
+          Додаток може зберігати невеликі тимчасові дані (кеш) на пристрої для офлайн-режиму
+          та швидшого завантаження. Ці дані не передаються зовнішнім серверам.
+        </p>
+
+        <h2 class="h2">3. Реклама та відстеження</h2>
+        <p class="p">
+          Додаток використовує <strong>Google AdMob</strong> для показу
+          <strong>банерної</strong>, <strong>міжсторінкової</strong> та
+          <strong>винагороджувальної реклами</strong>.
+        </p>
+
+        <p class="p">AdMob може збирати та обробляти:</p>
+        <ul class="list">
+          <li>Ідентифікатори пристрою (IDFA / AAID) та рекламний ідентифікатор.</li>
+          <li>Дані про взаємодію з рекламою (покази, кліки, ефективність кампаній).</li>
+          <li>Приблизне розташування (визначене за IP-адресою).</li>
+          <li>Діагностичні дані та продуктивність SDK.</li>
+        </ul>
+
+        <p class="p">
+          Ці дані можуть використовуватися для <strong>відстеження</strong> користувача в інших додатках і
+          на вебсайтах (за визначенням Apple). Перед показом реклами ми:
+        </p>
+        <ul class="list">
+          <li>покажемо запит <strong>App Tracking Transparency</strong> (доступ до IDFA),</li>
+          <li>відобразимо форму згоди <strong>Google UMP</strong> (GDPR) у регіоні ЄЕЗ,</li>
+          <li>оновимо розділ <strong>App Privacy</strong> у App Store.</li>
+        </ul>
+        <p class="p">
+          Докладніше: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Політика реклами Google</a>.
+        </p>
+
+        <h2 class="h2">4. Контакт</h2>
+        <p class="p">Електронна пошта: <a href="mailto:dev.mikita.laptsionak@gmail.com">dev.mikita.laptsionak@gmail.com</a></p>
+      </div>
     </section>
 
-    <div class="footer">© <span id="y"></span> Mikita Laptsionak. Wszelkie prawa zastrzeżone.</div>
+    <div class="footer">© <span id="y"></span> Mikita Laptsionak. All rights reserved.</div>
   </div>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
     const d = new Date();
-    document.getElementById('d').textContent =
-      d.toLocaleDateString('pl-PL', { year:'numeric', month:'2-digit', day:'2-digit' });
+    const format = loc => d.toLocaleDateString(loc,{year:'numeric',month:'2-digit',day:'2-digit'});
+    document.getElementById('y').textContent = d.getFullYear();
+    document.getElementById('d-pl').textContent = format('pl-PL');
+    document.getElementById('d-en').textContent = format('en-GB');
+    document.getElementById('d-uk').textContent = format('uk-UA');
+
+    const btns=document.querySelectorAll('.langbar button');
+    const blocks=document.querySelectorAll('[data-i18n]');
+    btns.forEach(b=>b.addEventListener('click',()=>{
+      btns.forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      blocks.forEach(x=>x.classList.toggle('show',x.dataset.i18n===b.dataset.lang));
+    }));
   </script>
 </body>
 </html>
