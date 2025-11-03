@@ -164,3 +164,93 @@ a { color: var(--link); }
   text-align:center; margin: 20px 0 40px;
   color: var(--muted);
 }
+
+/* ==== Responsive Design =================================================== */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    margin: 16px 0;
+  }
+
+  .logo {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    margin-left: 0;
+  }
+
+  .theme-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .h1 {
+    font-size: 24px;
+  }
+
+  .h2 {
+    font-size: 18px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  .langbar {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 12px;
+  }
+
+  .nav {
+    padding: 12px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .h1 {
+    font-size: 22px;
+  }
+
+  .h2 {
+    font-size: 16px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .logo-title {
+    font-size: 16px;
+  }
+
+  .logo-badge {
+    width: 32px;
+    height: 32px;
+  }
+}
