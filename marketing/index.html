@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Timetable DSW — Plan zajęć w kieszeni</title>
+  <meta name="description" content="Nowoczesna aplikacja mobilna dla studentów Uniwersytetu Dolnośląskiego DSW. Szybki dostęp do planu zajęć, wykładowców i przedmiotów." />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script defer src="/assets/theme.js"></script>
+  <style>
+    .langbar{display:flex;gap:8px;flex-wrap:wrap}
+    .langbar button{
+      padding:8px 10px;border-radius:10px;border:1px solid var(--card-border);
+      background:var(--card-bg);cursor:pointer;font-weight:600
+    }
+    .langbar button.active{outline:2px solid color-mix(in oklab,var(--link) 50%,transparent)}
+    [data-i18n]{display:none}
+    [data-i18n].show{display:block}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:20px 0}
+    .feature-card{
+      background:var(--card-bg);border:1px solid var(--card-border);
+      border-radius:var(--radius-sm);padding:20px;backdrop-filter:blur(10px);
+    }
+    .feature-icon{font-size:32px;margin-bottom:10px}
+    .feature-title{font-weight:700;margin-bottom:6px;color:var(--fg)}
+    .feature-desc{color:var(--muted);font-size:14px}
+    .cta-section{text-align:center;margin:32px 0;padding:32px;
+      background:linear-gradient(135deg,var(--accent1),var(--accent2),var(--accent3));
+      border-radius:var(--radius-lg);color:#fff}
+    .cta-title{font-size:28px;font-weight:800;margin:0 0 12px}
+    .cta-desc{font-size:16px;opacity:0.95;margin-bottom:24px}
+    .cta-button{
+      display:inline-block;padding:14px 32px;background:#fff;
+      color:var(--accent2);border-radius:999px;font-weight:700;
+      text-decoration:none;transition:transform .2s,box-shadow .2s
+    }
+    .cta-button:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+    .screenshots{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin:24px 0}
+    .screenshot-placeholder{
+      width:200px;height:400px;border-radius:20px;
+      background:linear-gradient(135deg,rgba(255,116,212,0.2),rgba(138,125,255,0.2));
+      border:2px solid var(--card-border);display:flex;align-items:center;
+      justify-content:center;font-size:14px;color:var(--muted)
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-aura"></div>
+
+  <div class="container">
+    <nav class="nav">
+      <div class="logo">
+        <div class="logo-badge"></div>
+        <div class="logo-title">Timetable DSW</div>
+        <span class="badge">App Store</span>
+      </div>
+      <div class="nav-links">
+        <a href="/support/">Wsparcie</a>
+        <a href="/privacy/">Prywatność</a>
+        <a href="/marketing/">Marketing</a>
+      </div>
+      <div class="theme-toggle" onclick="toggleTheme()">
+        <div class="switch"><div class="dot"></div></div>
+        <span>Tryb</span>
+      </div>
+    </nav>
+
+    <section class="card">
+      <div class="langbar">
+        <button data-lang="pl" class="active">Polski</button>
+        <button data-lang="en">English</button>
+        <button data-lang="uk">Українська</button>
+      </div>
+
+      <!-- ========== POLISH ========== -->
+      <div data-i18n="pl" class="show">
+        <h1 class="h1">Plan Zajęć DSW w Twojej Kieszeni</h1>
+        <p class="p muted">
+          Nowoczesna aplikacja mobilna stworzona specjalnie dla studentów
+          <strong>Uniwersytetu Dolnośląskiego DSW we Wrocławiu</strong>.
+          Dostęp do planu zajęć zawsze pod ręką — szybko, wygodnie i intuicyjnie.
+        </p>
+
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-icon">📅</div>
+            <div class="feature-title">Plan zajęć na żywo</div>
+            <div class="feature-desc">
+              Aktualny harmonogram z automatyczną synchronizacją — zawsze wiesz, co i kiedy masz.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎓</div>
+            <div class="feature-title">Informacje o wykładowcach</div>
+            <div class="feature-desc">
+              Szybki podgląd prowadzących zajęcia, z danymi kontaktowymi i konsultacjami.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📚</div>
+            <div class="feature-title">Lista przedmiotów</div>
+            <div class="feature-desc">
+              Przeglądaj wszystkie swoje kursy, ich kody i szczegóły w jednym miejscu.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🌙</div>
+            <div class="feature-title">Tryb ciemny</div>
+            <div class="feature-desc">
+              Elegancki interfejs dostosowany do pory dnia — oszczędzaj baterie i oczy.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <div class="feature-title">Błyskawiczna nawigacja</div>
+            <div class="feature-desc">
+              Minimalistyczny design pozwala znaleźć potrzebne informacje w sekundę.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <div class="feature-title">Offline & online</div>
+            <div class="feature-desc">
+              Dane są dostępne także bez internetu — idealnie na kampusie.
+            </div>
+          </div>
+        </div>
+
+        <h2 class="h2">Dla kogo?</h2>
+        <p class="p">
+          Aplikacja jest dedykowana <strong>studentom Uniwersytetu Dolnośląskiego DSW</strong>
+          we Wrocławiu, którzy chcą mieć łatwy dostęp do swojego planu zajęć bez konieczności
+          logowania się do systemów uniwersyteckich.
+        </p>
+
+        <h2 class="h2">Dlaczego Timetable DSW?</h2>
+        <ul>
+          <li><strong>Brak rejestracji</strong> — nie musisz zakładać konta ani logować się.</li>
+          <li><strong>Szybki dostęp</strong> — plan zawsze pod ręką, bez zbędnych kliknięć.</li>
+          <li><strong>Nowoczesny design</strong> — czytelny interfejs z gradientami i płynnymi animacjami.</li>
+          <li><strong>Aktualne dane</strong> — synchronizacja z oficjalną stroną DSW.</li>
+        </ul>
+
+        <div class="cta-section">
+          <div class="cta-title">Pobierz teraz!</div>
+          <div class="cta-desc">
+            Dostępne na iOS. Zainstaluj Timetable DSW i miej swój plan zajęć zawsze pod ręką.
+          </div>
+          <a href="#" class="cta-button">Pobierz z App Store</a>
+        </div>
+
+        <h2 class="h2">Kontakt</h2>
+        <p class="p">
+          Pytania? Sugestie? Napisz do nas:
+          <a href="mailto:dev.mikita.laptsionak@gmail.com">dev.mikita.laptsionak@gmail.com</a>
+        </p>
+      </div>
+
+      <!-- ========== ENGLISH ========== -->
+      <div data-i18n="en">
+        <h1 class="h1">DSW Timetable in Your Pocket</h1>
+        <p class="p muted">
+          A modern mobile app designed exclusively for students of
+          <strong>Dolnośląska School of Higher Education (DSW) in Wrocław</strong>.
+          Access your class schedule anytime — fast, convenient, and intuitive.
+        </p>
+
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-icon">📅</div>
+            <div class="feature-title">Live Schedule</div>
+            <div class="feature-desc">
+              Up-to-date timetable with automatic sync — always know what's next.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎓</div>
+            <div class="feature-title">Lecturer Info</div>
+            <div class="feature-desc">
+              Quick access to instructor details, contact info, and office hours.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📚</div>
+            <div class="feature-title">Course List</div>
+            <div class="feature-desc">
+              Browse all your courses, codes, and details in one place.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🌙</div>
+            <div class="feature-title">Dark Mode</div>
+            <div class="feature-desc">
+              Elegant interface that adapts to the time of day — save battery and eyes.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <div class="feature-title">Lightning Fast</div>
+            <div class="feature-desc">
+              Minimalist design lets you find what you need in seconds.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <div class="feature-title">Offline & Online</div>
+            <div class="feature-desc">
+              Data available even without internet — perfect for campus life.
+            </div>
+          </div>
+        </div>
+
+        <h2 class="h2">Who is it for?</h2>
+        <p class="p">
+          The app is dedicated to <strong>students of Dolnośląska School of Higher Education (DSW)</strong>
+          in Wrocław who want easy access to their timetable without logging into university systems.
+        </p>
+
+        <h2 class="h2">Why Timetable DSW?</h2>
+        <ul>
+          <li><strong>No registration</strong> — no need to create an account or log in.</li>
+          <li><strong>Quick access</strong> — your schedule always at hand, no extra clicks.</li>
+          <li><strong>Modern design</strong> — clean interface with gradients and smooth animations.</li>
+          <li><strong>Fresh data</strong> — synced with the official DSW website.</li>
+        </ul>
+
+        <div class="cta-section">
+          <div class="cta-title">Download Now!</div>
+          <div class="cta-desc">
+            Available on iOS. Install Timetable DSW and have your schedule always at hand.
+          </div>
+          <a href="#" class="cta-button">Get on App Store</a>
+        </div>
+
+        <h2 class="h2">Contact</h2>
+        <p class="p">
+          Questions? Suggestions? Email us at:
+          <a href="mailto:dev.mikita.laptsionak@gmail.com">dev.mikita.laptsionak@gmail.com</a>
+        </p>
+      </div>
+
+      <!-- ========== UKRAINIAN ========== -->
+      <div data-i18n="uk">
+        <h1 class="h1">Розклад DSW у Твоїй Кишені</h1>
+        <p class="p muted">
+          Сучасний мобільний додаток, створений спеціально для студентів
+          <strong>Університету Dolnośląska DSW у Вроцлаві</strong>.
+          Доступ до розкладу занять завжди під рукою — швидко, зручно та інтуїтивно.
+        </p>
+
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-icon">📅</div>
+            <div class="feature-title">Розклад наживо</div>
+            <div class="feature-desc">
+              Актуальний графік з автоматичною синхронізацією — завжди знаєш, що й коли маєш.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎓</div>
+            <div class="feature-title">Інформація про викладачів</div>
+            <div class="feature-desc">
+              Швидкий перегляд викладачів, їхніх контактів і консультацій.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📚</div>
+            <div class="feature-title">Список предметів</div>
+            <div class="feature-desc">
+              Переглядай всі свої курси, їхні коди та деталі в одному місці.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🌙</div>
+            <div class="feature-title">Темний режим</div>
+            <div class="feature-desc">
+              Елегантний інтерфейс, що адаптується до часу доби — економ батарею та бережи очі.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <div class="feature-title">Блискавична навігація</div>
+            <div class="feature-desc">
+              Мінімалістичний дизайн дозволяє знайти потрібну інформацію за секунду.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <div class="feature-title">Офлайн та онлайн</div>
+            <div class="feature-desc">
+              Дані доступні навіть без інтернету — ідеально для кампусу.
+            </div>
+          </div>
+        </div>
+
+        <h2 class="h2">Для кого?</h2>
+        <p class="p">
+          Додаток створено для <strong>студентів Університету Dolnośląska DSW</strong>
+          у Вроцлаві, які хочуть мати легкий доступ до свого розкладу без необхідності
+          входити в університетські системи.
+        </p>
+
+        <h2 class="h2">Чому Timetable DSW?</h2>
+        <ul>
+          <li><strong>Без реєстрації</strong> — не потрібно створювати обліковий запис чи входити в систему.</li>
+          <li><strong>Швидкий доступ</strong> — розклад завжди під рукою, без зайвих кліків.</li>
+          <li><strong>Сучасний дизайн</strong> — чіткий інтерфейс із градієнтами та плавними анімаціями.</li>
+          <li><strong>Актуальні дані</strong> — синхронізація з офіційним сайтом DSW.</li>
+        </ul>
+
+        <div class="cta-section">
+          <div class="cta-title">Завантажуй зараз!</div>
+          <div class="cta-desc">
+            Доступно на iOS. Встанови Timetable DSW і май свій розклад завжди під рукою.
+          </div>
+          <a href="#" class="cta-button">Завантажити з App Store</a>
+        </div>
+
+        <h2 class="h2">Контакт</h2>
+        <p class="p">
+          Питання? Пропозиції? Напиши нам:
+          <a href="mailto:dev.mikita.laptsionak@gmail.com">dev.mikita.laptsionak@gmail.com</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="footer">© <span id="y"></span> Mikita Laptsionak. All rights reserved.</div>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    const btns=document.querySelectorAll('.langbar button');
+    const blocks=document.querySelectorAll('[data-i18n]');
+    btns.forEach(b=>b.addEventListener('click',()=>{
+      btns.forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      blocks.forEach(x=>x.classList.toggle('show',x.dataset.i18n===b.dataset.lang));
+    }));
+  </script>
+</body>
+</html>
