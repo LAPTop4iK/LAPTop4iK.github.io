@@ -14,8 +14,9 @@
 
   // expose global handler
   window.toggleTheme = function () {
+    const current = localStorage.getItem(KEY);
     const isDark =
-      (saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches) ||
+      (current ? current === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches) ||
       root.getAttribute('data-theme') === 'dark';
 
     set(isDark ? 'light' : 'dark');
